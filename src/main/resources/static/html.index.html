@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Listing</title>
+</head>
+<body>
+<div class="container">
+    <h1>LIST OF COURSES:</h1>
+    <p>Click the button below to view available courses:</p>
+    <h2>Foundation</h2><a href="http://localhost:8080/honors-courses" target="_blank"><button>View Undergraduate Courses</button></a>
+    <br>
+    <h2>undergraduate</h2>
+    <a href="http://localhost:8080/undergraduate-courses" target="_blank"><button>View Honours Courses</button></a>
+    <br>
+    <h2>Honors</h2>
+    <a href="http://localhost:8080/foundation-courses" target="_blank"><button>View Foundation Courses</button></a>
+
+<script>
+    // Function to fetch data from the Spring Boot application
+    async function fetchData(url, targetId) {
+        const response = await fetch(url);
+        const data = await response.json();
+        const targetElement = document.getElementById(targetId);
+
+        // Clear previous content
+        targetElement.innerHTML = "";
+
+        // Populate the list
+        data.forEach(course => {
+            const listItem = document.createElement('li');
+            listItem.textContent = course;
+            targetElement.appendChild(listItem);
+        });
+    }
+</script>
+</body>
+</html>
+
