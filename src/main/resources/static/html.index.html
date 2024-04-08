@@ -18,16 +18,16 @@
     <a href="http://localhost:8080/foundation-courses" target="_blank"><button>View Foundation Courses</button></a>
 
 <script>
-    // Function to fetch data from the Spring Boot application
+    
     async function fetchData(url, targetId) {
         const response = await fetch(url);
         const data = await response.json();
         const targetElement = document.getElementById(targetId);
 
-        // Clear previous content
+       
         targetElement.innerHTML = "";
 
-        // Populate the list
+        
         data.forEach(course => {
             const listItem = document.createElement('li');
             listItem.textContent = course;
