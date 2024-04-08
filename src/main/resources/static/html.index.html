@@ -9,32 +9,37 @@
 <div class="container">
     <h1>LIST OF COURSES:</h1>
     <p>Click the button below to view available courses:</p>
-    <h2>Foundation</h2><a href="http://localhost:8080/honors-courses" target="_blank"><button>View Undergraduate Courses</button></a>
+    <h2>Foundation</h2>
+    <a href= "http://localhost:8080/foundation-courses" arget="_blank"><button>View Foundation Courses:</button></a>
     <br>
     <h2>undergraduate</h2>
-    <a href="http://localhost:8080/undergraduate-courses" target="_blank"><button>View Honours Courses</button></a>
+    <a href="http://localhost:8080/undergraduate-courses" target="_blank"><button>View Undergraduate Courses:</button></a>
     <br>
     <h2>Honors</h2>
-    <a href="http://localhost:8080/foundation-courses" target="_blank"><button>View Foundation Courses</button></a>
+    <a href= "http://localhost:8080/honors-courses"target="_blank"><button>View Honours Courses:</button></a>
+    <br>
+    <button onclick="goBack()">Go Back</button>
 
-<script>
-    
-    async function fetchData(url, targetId) {
-        const response = await fetch(url);
-        const data = await response.json();
-        const targetElement = document.getElementById(targetId);
+    <script>
+        async function fetchData(url, targetId) {
+            const response = await fetch(url);
+            const data = await response.json();
+            const targetElement = document.getElementById(targetId);
 
-       
-        targetElement.innerHTML = "";
+            targetElement.innerHTML = "";
+
+            data.forEach(course => {
+                const listItem = document.createElement('li');
+                listItem.textContent = course;
+                targetElement.appendChild(listItem);
+            });
+        }
 
         
-        data.forEach(course => {
-            const listItem = document.createElement('li');
-            listItem.textContent = course;
-            targetElement.appendChild(listItem);
-        });
-    }
-</script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</div>
 </body>
 </html>
-
