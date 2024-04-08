@@ -1,4 +1,4 @@
-package com.example.spring_assignment1;
+package com.example.SpringAssignment1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,8 +25,8 @@ public class SpringAssignment1Application {
         return Arrays.asList("CSC 223", "CSC 213");
     }
 
-    @GetMapping("/honors-courses")
-    public List<String> getHonorsCourses() {
+    @GetMapping("/honours-courses")
+    public List<String> getHonoursCourses() {
         return Arrays.asList("CSC 521", "CSC 514", "CSC 521", "CSC 523");
     }
 }
