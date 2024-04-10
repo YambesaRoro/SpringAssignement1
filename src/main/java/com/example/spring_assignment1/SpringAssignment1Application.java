@@ -22,7 +22,7 @@ public class SpringAssignment1Application {
 
     @GetMapping("/undergraduate-courses")
     public List<String> getUndergraduateCourses() {
-        return Arrays.asList("CSC 223", "CSC 213");
+        return Arrays.asList("CSC 223", "CSC 213", "CSC 313", "CSC 312","CSC 211");
     }
 
     @GetMapping("/honours-courses")
