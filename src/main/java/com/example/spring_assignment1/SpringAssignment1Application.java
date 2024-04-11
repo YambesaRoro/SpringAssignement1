@@ -17,16 +17,16 @@ public class SpringAssignment1Application {
 
     @GetMapping("/foundation-courses")
     public List<String> getFoundationCourses() {
-        return Arrays.asList("CSC 112F", "CSC 121F");
+        return Arrays.asList("CSC 110F", "CSC 123F");
     }
 
     @GetMapping("/undergraduate-courses")
     public List<String> getUndergraduateCourses() {
-        return Arrays.asList("CSC 223", "CSC 213", "CSC 313", "CSC 312","CSC 211");
+        return Arrays.asList("CSC 211", "CSC 213", "CSC 224", "CSC 313","CSC 312");
     }
 
     @GetMapping("/honours-courses")
     public List<String> getHonoursCourses() {
-        return Arrays.asList("CSC 521", "CSC 514", "CSC 521", "CSC 523");
+        return Arrays.asList("CSC 534", "CSC 511", "CSC 521", "CSC 512");
     }
 }
